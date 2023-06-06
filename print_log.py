@@ -1,8 +1,10 @@
-def plog(string):
+def plog(string, log_only=False):
     """prints and logs string"""
     global session_id #so it wont have to create multiple text file for every plog call. this will ensure that only one text file will be generated for every session.
     string = str(string)
-    print(string)
+    if log_only == False: #prints if log_only is false default is false
+        
+        print(string)
     try:
         session_id = session_id # checks if session_id is defined 
     except:
@@ -25,3 +27,4 @@ def plog(string):
         f.write(string)
         f.write('\n')
     return
+plog('pol')
