@@ -1,5 +1,5 @@
 def plog(string, log_only=False):
-    """prints and logs string"""
+    """prints and/or logs string"""
     global session_id #so it wont have to create multiple text file for every plog call. this will ensure that only one text file will be generated for every session.
     string = str(string)
     if log_only == False: #prints if log_only is false default is false
