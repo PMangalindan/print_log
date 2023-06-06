@@ -26,12 +26,20 @@ def plog(string):
         
     output_folder = r'print_log\\'    
     
-    import os
-    if os.path.exists(output_folder): 
-        pass
-    else:    
+    try:
         
-        os.mkdir(output_folder)
+        if os.path.exists(output_folder): 
+            pass
+        else:    
+
+            os.mkdir(output_folder)
+    except:
+        import os
+        if os.path.exists(output_folder): 
+            pass
+        else:    
+
+            os.mkdir(output_folder)
         
     with open(f'{output_folder}/plog_{session_id}.txt', 'a') as f:
         f.write(string)
